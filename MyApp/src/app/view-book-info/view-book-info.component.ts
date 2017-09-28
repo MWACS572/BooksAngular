@@ -1,3 +1,8 @@
+
+// developed by Mohammad Parsi. The following is the component corresponding to the use-case "view book reviews".
+//the following component will show all information of a book plus all it's reviews in a page. In additon, the logged-in user
+//can add a new review and edit their reviews in the page.
+
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {DbService} from "../db/db.service";

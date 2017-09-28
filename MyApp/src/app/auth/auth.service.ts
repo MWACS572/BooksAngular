@@ -7,13 +7,14 @@ import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 import {Observer, Observable} from 'rxjs';
 
+//The AuthService is completed by Nolawe Woldesemayat
 @Injectable()
 export class AuthService {
   private observer:Observer<string>;
   useremail:Observable<string> = new Observable(obs=>this.observer=obs)
   userProfile: any;
 
-
+//auth0 methods are is gathered from Auth0 website tutorial.
   auth0 = new auth0.WebAuth({
     clientID: 'qR3TC5eYbTLozacszNnZDqEk0jtWVQxY',
     domain: 'cs572.auth0.com',
@@ -69,22 +70,7 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
-  public getProfile(cb): void {
-    const accessToken = localStorage.getItem('access_token');
-    if (!accessToken) {
-      throw new Error('Access token must exist to fetch profile');
-    }
 
-    const self = this;
-    this.auth0.client.userInfo(accessToken, (err, profile) => {
-      if (profile) {
-        console.log("profile "+profile.email);
-        //this.observer.next(profile)
-        self.userProfile = profile;
-      }
-      cb(err, profile);
-    });
-  }
   getPro(){
     console.log("json "+JSON.parse(localStorage.getItem('profile')).name)
     return JSON.parse(localStorage.getItem('profile'));

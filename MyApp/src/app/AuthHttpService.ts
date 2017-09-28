@@ -1,3 +1,5 @@
+//authHttpServiceFactory class is completed by Nolawe Woldesemayat and the http wrapping function
+//is gathered from auth0 website tutorial.
 import {AuthConfig, AuthHttp} from "angular2-jwt";
 import {Http, RequestOptions} from "@angular/http/http";
 import {AuthService} from "./auth/auth.service";

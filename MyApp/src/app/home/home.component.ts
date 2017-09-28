@@ -1,3 +1,5 @@
+
+// developed by Mohammad Parsi. The following is the component corresponding to the use-case "view all books".
 import { Component, OnInit } from '@angular/core';
 import {DbService} from "../db/db.service";
 import "rxjs/add/operator/filter";

@@ -1,3 +1,5 @@
+// developed by Mohammad Parsi. The following is the service class to connect to back-end to save and retrieve data.
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable'

@@ -1,7 +1,5 @@
-/**
- * Created by Owner on 9/23/2017.
- */
-import {ModuleWithProviders} from '@angular/core';
+
+//This routing is done by Nolawe Woldesemayat
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
