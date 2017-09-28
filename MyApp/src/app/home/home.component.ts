@@ -6,19 +6,14 @@ import "rxjs/add/operator/filter";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent{//} implements OnInit {
+export class HomeComponent{
   message='';
   data;
-  books;//=service.getAllBooks().subscribe(res=>this.books=res.json());;
+  books;
   constructor(private service:DbService) {
     service.getAllBooks().map(res=>res.json()).subscribe(res=>{this.books=res});
   }
-  // ngOnInit(){
-  //   this.service.getAllBooks().subscribe(res=>this.books=res.json());
-  // }
-  // ngOnChange() {
-  //   this.service.getAllBooks().subscribe(res=>this.books=res.json());
-  // }
+
 
   searchText='';
   refreshPage(e){
@@ -32,7 +27,6 @@ export class HomeComponent{//} implements OnInit {
     })})
       .subscribe(results=>{this.books=results;
       if (results.length==0){this.nothingFound=true;}});
-    //this.service.getAllBooks().subscribe(res=>{this.books=res.json();this.books=this.books.filter(obj=>obj.tilte.includes(e.trim()).toArray())});
   }
 
   nothingFound:boolean;

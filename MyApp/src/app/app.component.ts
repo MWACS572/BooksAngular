@@ -57,6 +57,6 @@ export class AppComponent {
   constructor(public auth:AuthService) {
     auth.handleAuthentication();
     this.pro = auth.getPro();
-    console.log("this pro meail: "+this.pro.email)
+    
   }
 }

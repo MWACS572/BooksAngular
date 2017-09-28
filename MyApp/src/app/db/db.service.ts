@@ -22,11 +22,7 @@ export class DbService {
     if (this.user !== undefined) {
       return this.user;
     }
-    //  return this.user;
-    // .catch(error => {
-    //     console.log(error);
-    //     return Observable.throw(error);
-    // });
+
   }
 
   addBookWithObservable(book: any): Observable<any> {
@@ -46,7 +42,7 @@ export class DbService {
   getBookById(id:any){
     return this.authHttp.request("http://localhost:3004/api/book/"+id);
   }
-//review must include reviewId, email, reviewId will be generated in severside.
+
   addBookReview(review) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -58,7 +54,7 @@ export class DbService {
   getReviewThatNeedsEditing (){
     return this.authHttp.request("http://localhost:3004/api/getEditReview");
   }
-  // input:any={"bookId":"","reviewId":"","email":"" }
+
   postEditedReview(input){
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -66,16 +62,6 @@ export class DbService {
     return this.authHttp.post("http://localhost:3004/api/editReview", input);
 
   }
-
-  // private extractData(res: Response) {
-  //   let body = res.json();
-  //   return body.data || {};
-  // }
-  // private handleErrorObservable(error: Response | any) {
-  //   console.error(error.message || error);
-  //   return Observable.throw(error.message || error);
-  // }
-
 
 
 }

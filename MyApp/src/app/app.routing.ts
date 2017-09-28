@@ -18,5 +18,5 @@ const ROUTES: Routes = [
   {path:'viewBook/:id',component:ViewBookInfoComponent, canActivate:[AuthGuard]}
 ]
 
-//export const appRoutingProviders: any[] = [];
+
 export const MyRoutes = RouterModule.forRoot(ROUTES);

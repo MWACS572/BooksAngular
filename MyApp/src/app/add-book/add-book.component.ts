@@ -34,22 +34,9 @@ book = {title:'',author:'',ISBN:'',reviews:[]};
     'author':[this.book.author,Validators.required],'ISBN':[this.book.ISBN,Validators.required],'reviews':[this.book.reviews]});
 
     this.dbService= service;
-    // console.log(service.getUser());
-   }
-// onGetData():void{
-//   // this.user.name=this.dbService.getUser().username;
-//   // this.user.email=this.dbService.getUser().email;
 
-//   if (this.dbService.getUser()!==undefined) {
-//     this.myForm.setValue({
-//       'email': this.dbService.getUser().email,
-//       'name': this.dbService.getUser().name,
-//       'post': "post............"
-//     });
-//     this.user.name=this.dbService.getUser().name;
-//     this.user.email=this.dbService.getUser().email;
-//   }
-// }
+   }
+
    onSubmit():void{
      this.dbService.addBookWithObservable(this.myForm.value)
      .subscribe((data)=>{this.value = data.json();

@@ -28,7 +28,7 @@ import { FilterPipe } from './filter.pipe';
   imports: [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, MyRoutes
   ],
-  //providers: [DbService],
+
   providers: [DbService, AuthService,  AuthGuard, {
     provide: AuthHttp,
     useFactory: authHttpServiceFactory,
